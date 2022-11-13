@@ -11,8 +11,9 @@ const Header = () => {
     }
     return (
         <nav className="flex sm:justify-center space-x-4">
+            {/* https://tailwind-elements.com/snippets/tailwind/tailwindelements/3692881#html-tab-view this link can be usefull for another na */}
             {[
-                ['Home', '/home'],
+                ['Home', '/'],
                 ['Books', '/books'],
                 ['About', '/about'],
                 ['Contact', '/contact'],

@@ -9,6 +9,7 @@ import Footer from './Shared/Footer/Footer';
 import Books from './Pages/Home/Books/Books';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
+import BooksCart from './Pages/Home/Books/BooksCart';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/books' element={<Books></Books>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/booksCart' element={<BooksCart/>}/>
         {/* <Route path='/' element={<Home></Home>}/> */}
       </Routes>
       <Footer/>
