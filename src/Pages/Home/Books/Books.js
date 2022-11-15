@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import useBooks from '../../../Hooks/useBooks';
 import Book from './Book/Book';
 
 const Books = () => {
-    const [books, setBooks] = useState([])
+    const [books, setBooks] = useBooks()
+    // const [books, setBooks] = useState([])
 
-    useEffect(()=>{
-        fetch('http://localhost:8080/books')
-        .then(res => res.json())
-        .then(data => setBooks(data))
-    },[])
+    // useEffect(()=>{
+    //     fetch('http://localhost:8080/books')
+    //     .then(res => res.json())
+    //     .then(data => setBooks(data))
+    // },[])
     return (
         <div className='container my-24 px-6 mx-auto'>
             <h1 className='text-center'>All the boooks: {books.length}</h1>
