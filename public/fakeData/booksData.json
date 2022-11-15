@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "book_name": "Gitanjoli",
+      "image": "https://i.ibb.co/GsNRP3F/gitanjali-original-imafe3gzf6sjtmsf.webp",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti dignissimos animi dolores quisquam velit temporibus architecto tenetur molestiae consectetur quod eligendi illum facere similique voluptatibus necessitatibus unde possimus impedit omnis debitis pariatur, nihil assumenda nostrum. Repellendus quos consectetur dolore, voluptate asperiores soluta pariatur, rerum sed ducimus illo itaque corporis id facilis. Harum veritatis totam assumenda ut nesciunt. Quidem, quasi.",
+      "price": 250,
+      "quantity": 3,
+      "supplier_name": "Moshiur"
+    },
+    {
+      "id": 2,
+      "book_name": "Shonar Tori",
+      "image": "https://i.ibb.co/GsNRP3F/gitanjali-original-imafe3gzf6sjtmsf.webp",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti dignissimos animi dolores quisquam velit temporibus architecto tenetur molestiae consectetur quod eligendi illum facere similique voluptatibus necessitatibus unde possimus impedit omnis debitis pariatur, nihil assumenda nostrum. Repellendus quos consectetur dolore, voluptate asperiores soluta pariatur, rerum sed ducimus illo itaque corporis id facilis. Harum veritatis totam assumenda ut nesciunt. Quidem, quasi.",
+      "price": 150,
+      "quantity": 4,
+      "supplier_name": "Tazrin"
+    },
+    {
+      "id": 3,
+      "book_name": "Hemlock",
+      "image": "https://i.ibb.co/J7XFbyK/13621256.jpg\" alt=\"13621256",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti dignissimos animi dolores quisquam velit temporibus architecto tenetur molestiae consectetur quod eligendi illum facere similique voluptatibus necessitatibus unde possimus impedit omnis debitis pariatur, nihil assumenda nostrum. Repellendus quos consectetur dolore, voluptate asperiores soluta pariatur, rerum sed ducimus illo itaque corporis id facilis. Harum veritatis totam assumenda ut nesciunt. Quidem, quasi.",
+      "price": 350,
+      "quantity": 3,
+      "supplier_name": "Sayma"
+    },
+    {
+      "id": 4,
+      "book_name": "Cindrella",
+      "image": "https://i.ibb.co/jJ7HzCL/51i-TMIe-Dvb-L-AC-SY780.jpg",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti dignissimos animi dolores quisquam velit temporibus architecto tenetur molestiae consectetur quod eligendi illum facere similique voluptatibus necessitatibus unde possimus impedit omnis debitis pariatur, nihil assumenda nostrum. Repellendus quos consectetur dolore, voluptate asperiores soluta pariatur, rerum sed ducimus illo itaque corporis id facilis. Harum veritatis totam assumenda ut nesciunt. Quidem, quasi.",
+      "price": 360,
+      "quantity": 4,
+      "supplier_name": "Hafiz"
+    },
+    {
+      "id": 5,
+      "book_name": "Opekkha",
+      "image": "https://i.ibb.co/2k2G4j6/Opekkha-by-Humayun-Ahmed.jpg",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti dignissimos animi dolores quisquam velit temporibus architecto tenetur molestiae consectetur quod eligendi illum facere similique voluptatibus necessitatibus unde possimus impedit omnis debitis pariatur, nihil assumenda nostrum. Repellendus quos consectetur dolore, voluptate asperiores soluta pariatur, rerum sed ducimus illo itaque corporis id facilis. Harum veritatis totam assumenda ut nesciunt. Quidem, quasi.",
+      "price": 250,
+      "quantity": 2,
+      "supplier_name": "Osman"
+    },
+    {
+      "id": 6,
+      "book_name": "Ami Topu",
+      "image": "https://i.ibb.co/pymPBtx/Ami-Topu-By-Muhammad-Zafar-Iqbal-185x265.jpg",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti dignissimos animi dolores quisquam velit temporibus architecto tenetur molestiae consectetur quod eligendi illum facere similique voluptatibus necessitatibus unde possimus impedit omnis debitis pariatur, nihil assumenda nostrum. Repellendus quos consectetur dolore, voluptate asperiores soluta pariatur, rerum sed ducimus illo itaque corporis id facilis. Harum veritatis totam assumenda ut nesciunt. Quidem, quasi.",
+      "price": 450,
+      "quantity": 4,
+      "supplier_name": "Nahid"
+    }
+  ]
