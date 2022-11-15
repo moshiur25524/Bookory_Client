@@ -14,6 +14,7 @@ import AddBook from './Pages/Home/Books/AddBook/AddBook';
 import ManageBooks from './Pages/Home/Books/ManageBooks/ManageBooks';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import BookDetail from './Pages/Home/Books/BookDetail/BookDetail';
+import NotFound from './Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/booksCart' element={<BooksCart />} />
+        <Route path='*' element={<NotFound/>}/>
         {/* <Route path='/' element={<Home></Home>}/> */}
       </Routes>
       <Footer />
