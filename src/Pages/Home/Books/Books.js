@@ -13,7 +13,7 @@ const Books = () => {
     // },[])
     return (
         <div className='container my-24 px-6 mx-auto'>
-            <h1 className='text-center'>All the boooks: {books.length}</h1>
+            <h1 class="text-center text-3xl font-bold mb-6 text-gray-800">All the boooks</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 content-center items-center w-full gap-6'>
                 {
                     books.map(book => <Book key={book._id}

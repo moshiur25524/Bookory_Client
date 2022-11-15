@@ -16,7 +16,7 @@ const Book = ({ book }) => {
                     <div class="p-6">
                         <h5 class="text-gray-900 text-xl font-medium mb-2">{book_name}</h5>
                         <p class="text-gray-700 text-base mb-4">
-                            {short_description.slice(0,90)} 
+                            {short_description?.slice(0,90)} 
                             <a href="#!" class="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">Learn More</a>
                         </p>
                         <p class="text-gray-700 text-base mb-4">

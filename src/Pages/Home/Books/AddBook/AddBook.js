@@ -1,12 +1,33 @@
 import React from 'react';
 
 const AddBook = () => {
+    const handleAddBook = e =>{
+        e.preventDefault()
+        const book_name = e.target.name.value;
+        const image = e.target.image.value;
+        const supplier_name = e.target.supplier.value;
+        const price = e.target.price.value;
+        const quantity = e.target.quantity.value;
+        const short_description = e.target.description.value;
+        const book = {book_name, image, supplier_name, price, quantity, short_description}
+        console.log(book);
+
+        fetch('http://localhost:8080/book',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(book)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
     return (
         <div className='flex items-center justify-center h-screen'>
             <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
-                <form>
+                <form onSubmit={handleAddBook}>
                     <div class="form-group mb-6">
-                        <input type="text" class="form-control block
+                        <input type="text" name='name' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -20,10 +41,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="Book" />
+                            placeholder="book_name" />
                     </div>
                     <div class="form-group mb-6">
-                        <input type="text" class="form-control block
+                        <input type="text" name='image' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -37,10 +58,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="Name" />
+                            placeholder="image URL" />
                     </div>
                     <div class="form-group mb-6">
-                        <input type="text" class="form-control block
+                        <input type="text" name='supplier' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -54,10 +75,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="Name" />
+                            placeholder="supplier_name" />
                     </div>
                     <div class="form-group mb-6">
-                        <input type="text" class="form-control block
+                        <input type="number" name='price' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -71,24 +92,24 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="Name" />
+                            placeholder="price" />
                     </div>
                     <div class="form-group mb-6">
-                        <input type="email" class="form-control block
-                            w-full
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
-                            placeholder="Email address" />
+                        <input type="number" name='quantity' class="form-control block
+                                w-full
+                                px-3
+                                py-1.5
+                                text-base
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+                            placeholder="Quantity" />
                     </div>
                     <div class="form-group mb-6">
                         <textarea
@@ -111,15 +132,11 @@ const AddBook = () => {
                                   "
                             id="exampleFormControlTextarea13"
                             rows="3"
-                            placeholder="Message"
+                            name='description'
+                            placeholder="Book Description"
                         ></textarea>
                     </div>
-                    <div class="form-group form-check text-center mb-6">
-                        <input type="checkbox"
-                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
-                            id="exampleCheck87" checked />
-                        <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">Send me a copy of this message</label>
-                    </div>
+                
                     <button type="submit" class="
                                 w-full
                                 px-6
@@ -137,8 +154,7 @@ const AddBook = () => {
                                 active:bg-blue-800 active:shadow-lg
                                 transition
                                 duration-150
-                                ease-in-out">
-        Send</button>
+                                ease-in-out">Add A book</button>
                 </form>
             </div>
         </div>
