@@ -10,11 +10,11 @@ const Books = () => {
         .then(data => setBooks(data))
     },[])
     return (
-        <div>
-            <h1>All the boooks: {books.length}</h1>
+        <div className='container my-24 px-6 mx-auto'>
+            <h1 className='text-center'>All the boooks: {books.length}</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 content-center items-center w-full gap-6'>
                 {
-                    books.map(book => <Book key={book.id}
+                    books.map(book => <Book key={book._id}
                     book = {book}></Book>)
                 }
             </div>
