@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Book = ({ book }) => {
@@ -12,7 +12,9 @@ const Book = ({ book }) => {
         <div>
             <div class="flex justify-center">
                 <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                        <img class="rounded-t-lg w-full" src={image} alt="" />
+                       <div className='relative overflow-hidden bg-no-repeat bg-cover'>
+                       <img class="rounded-t-lg w-full hover:scale-110 transition duration-300 ease-in-out" src={image} alt="" />
+                       </div>
                     <div class="p-6">
                         <h5 class="text-gray-900 text-xl font-medium mb-2">{book_name}</h5>
                         <p class="text-gray-700 text-base mb-4">

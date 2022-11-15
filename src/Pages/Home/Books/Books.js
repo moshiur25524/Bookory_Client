@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useBooks from '../../../Hooks/useBooks';
 import Book from './Book/Book';
 
 const Books = () => {
-    const [books, setBooks] = useBooks()
+    const [books] = useBooks()
     // const [books, setBooks] = useState([])
 
     // useEffect(()=>{
