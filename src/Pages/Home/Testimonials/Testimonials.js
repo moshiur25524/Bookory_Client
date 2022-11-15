@@ -18,6 +18,7 @@ const Testimonials = () => {
                         <img
                             src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
                             class="rounded-full shadow-lg w-32"
+                            alt='avatar'
                         />
                     </div>
                     <h5 class="text-xl font-semibold mb-4">Maria Smantha</h5>
@@ -134,6 +135,7 @@ const Testimonials = () => {
                         <img
                             src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg"
                             class="rounded-full shadow-lg w-32"
+                            alt='avatar'
                         />
                     </div>
                     <h5 class="text-xl font-semibold mb-4">Lisa Cudrow</h5>
@@ -248,6 +250,7 @@ const Testimonials = () => {
                         <img
                             src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
                             class="rounded-full shadow-lg w-32"
+                            alt='avatar'
                         />
                     </div>
                     <h5 class="text-xl font-semibold mb-4">John Smith</h5>

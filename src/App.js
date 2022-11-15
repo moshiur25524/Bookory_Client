@@ -10,6 +10,8 @@ import Books from './Pages/Home/Books/Books';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import BooksCart from './Pages/Home/Books/BooksCart';
+import AddBook from './Pages/Home/Books/AddBook/AddBook';
+import ManageBooks from './Pages/Home/Books/ManageBooks/ManageBooks';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path='/login' element={<Login></Login>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/books' element={<Books></Books>}/>
+        <Route path='/add-book' element={<AddBook/>}/>
+        <Route path='/manage-book' element={<ManageBooks/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/booksCart' element={<BooksCart/>}/>

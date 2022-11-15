@@ -15,6 +15,8 @@ const Header = () => {
             {[
                 ['Home', '/'],
                 ['Books', '/books'],
+                ['Add Book', '/add-book'],
+                ['Manage Books', '/manage-book'],
                 ['About', '/about'],
                 ['Contact', '/contact'],
             ].map(([title, url]) => (
