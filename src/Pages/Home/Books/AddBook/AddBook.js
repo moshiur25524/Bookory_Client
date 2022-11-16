@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddBook = () => {
     const handleAddBook = e =>{
@@ -20,10 +22,14 @@ const AddBook = () => {
             body: JSON.stringify(book)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            toast("Adding a book is Successfull!");
+            console.log(data)})
+            e.target.reset()
     }
     return (
         <div className='flex items-center justify-center h-screen'>
+            <ToastContainer/>
             <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
                 <form onSubmit={handleAddBook}>
                     <div class="form-group mb-6">
