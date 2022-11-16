@@ -20,7 +20,7 @@ const UpdateBook = () => {
     }, [id])
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
         const url = `http://localhost:8080/book/${id}`
         fetch(url,{
             method:'PUT',
@@ -32,6 +32,7 @@ const UpdateBook = () => {
         .then(res => res.json())
         .then(result =>{
             console.log(result);
+            e.target.reset()
             toast.warning('Updating A Book !!!')
         })
         // console.log(data)
@@ -40,12 +41,12 @@ const UpdateBook = () => {
     return (
         <div>
             <ToastContainer/>
-            <h1 className='text-center font-semibold text-gray-800'>Update The Book: {book.book_name}</h1>
+            <h1 className='text-center font-semibold text-5xl text-gray-800'><span className='text-orange-800'>{book.book_name}</span></h1>
             <div className='flex items-center justify-center w-full'>
                 <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="form-group mb-6">
-                            <input class="form-control block
+                            <input defaultValue={book.book_name} class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -62,7 +63,7 @@ const UpdateBook = () => {
                                 placeholder="book_name" {...register("book_name", { required: true })} />
                         </div>
                         <div class="form-group mb-6">
-                            <input value={book.image} class="form-control block
+                            <input defaultValue={book.image} class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -79,7 +80,7 @@ const UpdateBook = () => {
                                 placeholder="image" {...register("image", { required: true })} />
                         </div>
                         <div class="form-group mb-6">
-                            <input class="form-control block
+                            <input defaultValue={book.supplier_name} class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -96,7 +97,7 @@ const UpdateBook = () => {
                                 placeholder="supplier_name" {...register("supplier_name", { required: true })} />
                         </div>
                         <div class="form-group mb-6">
-                            <input type='number' class="form-control block
+                            <input defaultValue={book.price} type='number' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -113,7 +114,7 @@ const UpdateBook = () => {
                                 placeholder="price" {...register("price", { required: true })} />
                         </div>
                         <div class="form-group mb-6">
-                            <input type='number' class="form-control block
+                            <input defaultValue={book.quantity} type='number' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -130,7 +131,7 @@ const UpdateBook = () => {
                                 placeholder="quantity" {...register("quantity", { required: true })} />
                         </div>
                         <div class="form-group mb-6">
-                            <textarea class="form-control block
+                            <textarea defaultValue={book.short_description} class="form-control block
                                 w-full
                                 px-3
                                 py-1.5

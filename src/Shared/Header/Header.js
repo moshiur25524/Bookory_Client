@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
-    const logOut = () =>{
+    const logOut = () => {
         signOut(auth);
     }
     return (
@@ -15,15 +15,22 @@ const Header = () => {
             {[
                 ['Home', '/'],
                 ['Books', '/books'],
-                ['Add Book', '/add-book'],
-                ['Manage Books', '/manage-book'],
                 ['About', '/about'],
                 ['Contact', '/contact'],
             ].map(([title, url]) => (
                 <Link to={`${url}`} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</Link>
             ))}
-            {user ? <button className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" onClick={logOut}>Signout</button>:<Link
-            className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" to='/login'>Login</Link>}
+            {user ? <>
+                <Link
+                    className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" to='/add-book'>Add Book</Link>
+                <Link
+                    className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" to='/manage-book'>Manage Books
+                </Link>
+                <button className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" onClick={logOut}>Signout</button>
+            </> :
+                <Link
+                    className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" to='/login'>Login
+                </Link>}
         </nav>
     );
 };
