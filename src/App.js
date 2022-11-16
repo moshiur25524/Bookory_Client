@@ -15,6 +15,7 @@ import ManageBooks from './Pages/Home/Books/ManageBooks/ManageBooks';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import BookDetail from './Pages/Home/Books/BookDetail/BookDetail';
 import NotFound from './Shared/NotFound/NotFound';
+import UpdateBook from './Pages/Home/Books/UpdateBook/UpdateBook';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/books' element={<Books></Books>} />
         <Route path='/book/:id' element={<PrivateRoute><BookDetail/></PrivateRoute>}/>
+        <Route path='/update_Book/:id' element={<PrivateRoute><UpdateBook/></PrivateRoute>}/>
         <Route path='/add-book' element={<AddBook />} />
         <Route path='/manage-book' element={<ManageBooks />} />
         <Route path='/about' element={<About />} />
