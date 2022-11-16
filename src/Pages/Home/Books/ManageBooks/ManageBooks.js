@@ -1,5 +1,7 @@
 import React from 'react';
 import useBooks from '../../../../Hooks/useBooks';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageBooks = () => {
     // const {_id ,book_name,image,short_description,price,quantity,supplier_name} = book;
@@ -20,6 +22,7 @@ const ManageBooks = () => {
                         console.log('deleted Successfully');
                         const remaining = books.filter(book => book._id !== id)
                         setBooks(remaining)
+                        toast.error('Delelted a Book')
                     }
 
                 })
@@ -28,6 +31,7 @@ const ManageBooks = () => {
     }
     return (
         <div>
+            <ToastContainer></ToastContainer>
             {/* <h1>Manage all the books</h1> */}
             <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4">
                 <div class="flex flex-col justify-center h-full">

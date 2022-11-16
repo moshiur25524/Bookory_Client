@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddBook = () => {
-    const handleAddBook = e =>{
+    const handleAddBook = e => {
         e.preventDefault()
         const book_name = e.target.name.value;
         const image = e.target.image.value;
@@ -11,29 +11,32 @@ const AddBook = () => {
         const price = e.target.price.value;
         const quantity = e.target.quantity.value;
         const short_description = e.target.description.value;
-        const book = {book_name, image, supplier_name, price, quantity, short_description}
+        const book = { book_name, image, supplier_name, price, quantity, short_description }
         console.log(book);
 
-        fetch('http://localhost:8080/book',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch('http://localhost:8080/book', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(book)
         })
-        .then(res => res.json())
-        .then(data => {
-            toast("Adding a book is Successfull!");
-            console.log(data)})
-            e.target.reset()
+            .then(res => res.json())
+            .then(data => {
+                toast.success("Adding book is Successfull!");
+                console.log(data)
+            })
+        e.target.reset()
     }
     return (
-        <div className='flex items-center justify-center h-screen'>
-            <ToastContainer/>
-            <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
-                <form onSubmit={handleAddBook}>
-                    <div class="form-group mb-6">
-                        <input type="text" name='name' class="form-control block
+        <div>
+            <h1 class="text-center text-3xl font-bold mb-3 mt-3 text-gray-800">Add Book</h1>
+            <div className='flex items-center justify-center h-90'>
+                <ToastContainer />
+                <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+                    <form onSubmit={handleAddBook}>
+                        <div class="form-group mb-6">
+                            <input type="text" name='name' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -47,10 +50,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="book_name" />
-                    </div>
-                    <div class="form-group mb-6">
-                        <input type="text" name='image' class="form-control block
+                                placeholder="book_name" />
+                        </div>
+                        <div class="form-group mb-6">
+                            <input type="text" name='image' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -64,10 +67,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="image URL" />
-                    </div>
-                    <div class="form-group mb-6">
-                        <input type="text" name='supplier' class="form-control block
+                                placeholder="image URL" />
+                        </div>
+                        <div class="form-group mb-6">
+                            <input type="text" name='supplier' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -81,10 +84,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="supplier_name" />
-                    </div>
-                    <div class="form-group mb-6">
-                        <input type="number" name='price' class="form-control block
+                                placeholder="supplier_name" />
+                        </div>
+                        <div class="form-group mb-6">
+                            <input type="number" name='price' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -98,10 +101,10 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="price" />
-                    </div>
-                    <div class="form-group mb-6">
-                        <input type="number" name='quantity' class="form-control block
+                                placeholder="price" />
+                        </div>
+                        <div class="form-group mb-6">
+                            <input type="number" name='quantity' class="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -115,11 +118,11 @@ const AddBook = () => {
                                 ease-in-out
                                 m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-                            placeholder="Quantity" />
-                    </div>
-                    <div class="form-group mb-6">
-                        <textarea
-                            class="
+                                placeholder="Quantity" />
+                        </div>
+                        <div class="form-group mb-6">
+                            <textarea
+                                class="
                                         form-control
                                         block
                                         w-full
@@ -136,14 +139,14 @@ const AddBook = () => {
                                          m-0
                                          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                                   "
-                            id="exampleFormControlTextarea13"
-                            rows="3"
-                            name='description'
-                            placeholder="Book Description"
-                        ></textarea>
-                    </div>
-                
-                    <button type="submit" class="
+                                id="exampleFormControlTextarea13"
+                                rows="3"
+                                name='description'
+                                placeholder="Book Description"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="
                                 w-full
                                 px-6
                                 py-2.5
@@ -161,7 +164,8 @@ const AddBook = () => {
                                 transition
                                 duration-150
                                 ease-in-out">Add A book</button>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );
