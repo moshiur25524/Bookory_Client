@@ -41,6 +41,9 @@ const Header = () => {
                 <Link 
                     className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" to='/manage-book'>Manage Books
                 </Link>
+                <Link 
+                    className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" to='/orders'>Book Orders
+                </Link>
                 <button className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" onClick={logOut}>Signout</button>
             </> :
                 <Link 

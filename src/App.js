@@ -18,6 +18,7 @@ import NotFound from './Shared/NotFound/NotFound';
 import UpdateBook from './Pages/Home/Books/UpdateBook/UpdateBook';
 import OrderBook from './Pages/Home/Books/OrderBook/OrderBook';
 import { ToastContainer } from 'react-toastify';
+import Orders from './Pages/Orders/Orders';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='/manage-book' element={<PrivateRoute><ManageBooks /></PrivateRoute>} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/orders' element={<PrivateRoute><Orders/></PrivateRoute>}/>
         <Route path='/booksCart' element={<BooksCart />} />
         <Route path='*' element={<NotFound/>}/>
         {/* <Route path='/' element={<Home></Home>}/> */}
