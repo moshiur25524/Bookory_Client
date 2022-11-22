@@ -8,7 +8,7 @@ import Testimonials from '../Testimonials/Testimonials';
 
 const Home = () => {
     const [books, setBooks] = useBooks()
-    const slicyBooks = books.slice(0,6)
+    const slicyBooks = books.slice(0,3)
     return (
         <div>
            <HeroSection/>

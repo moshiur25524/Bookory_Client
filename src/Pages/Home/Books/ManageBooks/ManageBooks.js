@@ -22,7 +22,7 @@ const ManageBooks = () => {
                         console.log('deleted Successfully');
                         const remaining = books.filter(book => book._id !== id)
                         setBooks(remaining)
-                        toast.error('Delelted a Book')
+                        toast.error('Deleted a Book')
                     }
 
                 })

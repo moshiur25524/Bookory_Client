@@ -28,8 +28,8 @@ function App() {
         <Route path='/books' element={<Books></Books>} />
         <Route path='/book/:id' element={<PrivateRoute><BookDetail/></PrivateRoute>}/>
         <Route path='/update_Book/:id' element={<PrivateRoute><UpdateBook/></PrivateRoute>}/>
-        <Route path='/add-book' element={<AddBook />} />
-        <Route path='/manage-book' element={<ManageBooks />} />
+        <Route path='/add-book' element={<PrivateRoute><AddBook /></PrivateRoute>} />
+        <Route path='/manage-book' element={<PrivateRoute><ManageBooks /></PrivateRoute>} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/booksCart' element={<BooksCart />} />
