@@ -17,6 +17,7 @@ import BookDetail from './Pages/Home/Books/BookDetail/BookDetail';
 import NotFound from './Shared/NotFound/NotFound';
 import UpdateBook from './Pages/Home/Books/UpdateBook/UpdateBook';
 import OrderBook from './Pages/Home/Books/OrderBook/OrderBook';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         {/* <Route path='/' element={<Home></Home>}/> */}
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
