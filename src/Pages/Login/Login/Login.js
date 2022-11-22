@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loader from '../../../Shared/Loader/Loader';
@@ -13,6 +13,10 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    let from = location.state?.from?.pathname || '/'
 
     const handleLogin = e => {
         e.preventDefault()
@@ -24,9 +28,12 @@ const Login = () => {
         e.target.reset()
     }
 
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
-    if(loading){
-        return <Loader/>
+    if (loading) {
+        return <Loader />
     }
 
     if (error) {
@@ -34,7 +41,7 @@ const Login = () => {
     }
     return (
         <div>
-           
+
             <section class="h-screen">
                 <div class="px-6 h-full text-gray-800">
                     <div
