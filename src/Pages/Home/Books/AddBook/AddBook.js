@@ -30,13 +30,13 @@ const AddBook = () => {
     }
     return (
         <div>
-            <h1 class="text-center text-3xl font-bold mb-3 mt-3 text-gray-800">Add Book</h1>
+            <h1 className="text-center text-3xl font-bold mb-3 mt-3 text-gray-800">Add Book</h1>
             <div className='flex items-center justify-center h-90'>
                 <ToastContainer />
-                <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+                <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md">
                     <form onSubmit={handleAddBook}>
-                        <div class="form-group mb-6">
-                            <input type="text" name='name' class="form-control block
+                        <div className="form-group mb-6">
+                            <input type="text" name='name' className="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -52,8 +52,8 @@ const AddBook = () => {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
                                 placeholder="book_name" />
                         </div>
-                        <div class="form-group mb-6">
-                            <input type="text" name='image' class="form-control block
+                        <div className="form-group mb-6">
+                            <input type="text" name='image' className="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -69,8 +69,8 @@ const AddBook = () => {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
                                 placeholder="image URL" />
                         </div>
-                        <div class="form-group mb-6">
-                            <input type="text" name='supplier' class="form-control block
+                        <div className="form-group mb-6">
+                            <input type="text" name='supplier' className="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -86,8 +86,8 @@ const AddBook = () => {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
                                 placeholder="supplier_name" />
                         </div>
-                        <div class="form-group mb-6">
-                            <input type="number" name='price' class="form-control block
+                        <div className="form-group mb-6">
+                            <input type="number" name='price' className="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -103,8 +103,8 @@ const AddBook = () => {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
                                 placeholder="price" />
                         </div>
-                        <div class="form-group mb-6">
-                            <input type="number" name='quantity' class="form-control block
+                        <div className="form-group mb-6">
+                            <input type="number" name='quantity' className="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -120,9 +120,9 @@ const AddBook = () => {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
                                 placeholder="Quantity" />
                         </div>
-                        <div class="form-group mb-6">
+                        <div className="form-group mb-6">
                             <textarea
-                                class="
+                                className="
                                         form-control
                                         block
                                         w-full
@@ -146,7 +146,7 @@ const AddBook = () => {
                             ></textarea>
                         </div>
 
-                        <button type="submit" class="
+                        <button type="submit" className="
                                 w-full
                                 px-6
                                 py-2.5
