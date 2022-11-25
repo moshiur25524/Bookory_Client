@@ -24,7 +24,7 @@ const AddBook = () => {
             .then(res => res.json())
             .then(data => {
                 toast.success("Adding book is Successfull!");
-                console.log(data)
+                // console.log(data)
             })
         e.target.reset()
     }

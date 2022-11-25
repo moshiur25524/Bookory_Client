@@ -24,13 +24,12 @@ const Login = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const user = { email, password }
-        console.log(user);
+        // const user = { email, password }
+        // console.log(user);
 
        await signInWithEmailAndPassword(email, password)
        const {data} = await  axios.post('http://localhost:8080/login', {email})
        localStorage.setItem('accessToken', data)
-       navigate()
        navigate(from, { replace: true });
        console.log(data);
         e.target.reset()
