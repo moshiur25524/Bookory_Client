@@ -1,12 +1,53 @@
-# Getting Started with Create React App
+# Bookory Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site of [Bookory](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Main Features of Bookory
 
-In the project directory, you can run:
+1. Home Page.
+2. Books
+   - Add Books
+   - Manage Books
+   - Order Books
+3. About
+4. Blogs
+5. Contact
+6. Login and Logout Authentication
 
-### `npm start`
+### `Details of Components`
+
+1. Home page -> Navbar , Banner, 6 books from the list, Testimonial, Footer
+2. Add Books -> A new book can be added in the books list
+   Manage Books -> All the books can be manage in this page. Any book can be deleted from the list.
+   Order Books -> User can order any books
+3. About of the book library.
+4. Blogs -> Development Related 4 Questions and their Answers
+5. Contact -> Email, Phone number, Addresss are added in the contact component.
+6. A User can login and Log out from the application.
+
+### `More Extra Features of Bookory`
+
+* JWT (Json Web Token) implemented in the my order route. A token will be genereted in the server side when a user will login. Then the token will be sent to the client side. Through this token a user can get any secure information if the user is valid. For this heve to send the token to the server. And the server will check that is the token is valid or not. If the token is valid, server will send response of the user data. If the token is not valid, user will be logged out. 
+* This Project is mainly server site related. Some collection are created for books and orders.
+
+### `Tools/dependencies of client side`
+
+* axios
+* firebase
+* react
+* react-dom
+* react-firebase-hooks
+* react-hook-form
+* react-router-dom
+* react-toastify
+
+### `Tools/Depencies of Server side`
+
+* cors
+* dotenv
+* express
+* jsonwebtoken
+* mongodb
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +55,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

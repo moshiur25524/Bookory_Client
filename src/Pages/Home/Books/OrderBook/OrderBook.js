@@ -21,10 +21,10 @@ const OrderBook = () => {
             })
     }, [id])
 
-    const handleOrder = e =>{
+    const handleOrder = e => {
         e.preventDefault()
         const order = {
-            name : e.target.name.value,
+            name: e.target.name.value,
             email: e.target.email.value,
             book: e.target.book.value,
             address: e.target.address.value,
@@ -32,21 +32,21 @@ const OrderBook = () => {
         }
         // console.log(order);
         axios.post('http://localhost:8080/order', order)
-          .then(function (response) {
-            // console.log(response);
-            const {data} = response;
-            if(data.insertedId){
-                toast('Order Successfull')
-            }
-            e.target.reset()
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+            .then(function (response) {
+                // console.log(response);
+                const { data } = response;
+                if (data.insertedId) {
+                    toast('Order Successfull')
+                }
+                e.target.reset()
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (
         <div>
-            <ToastContainer/>
+            <ToastContainer />
             <section className="relative flex flex-wrap lg:h-screen lg:items-center">
                 <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
                     <div className="mx-auto max-w-lg text-center">
@@ -64,11 +64,9 @@ const OrderBook = () => {
                             <div className="relative">
                                 <input
                                     type="text"
-                                    value={user.displayName}
                                     name='name'
                                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                     placeholder="Enter Name"
-                                    readOnly
                                 />
                             </div>
                         </div>

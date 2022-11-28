@@ -2,6 +2,7 @@ import React from 'react';
 import useBooks from '../../../../Hooks/useBooks';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const ManageBooks = () => {
     // const {_id ,book_name,image,short_description,price,quantity,supplier_name} = book;
@@ -84,6 +85,7 @@ const ManageBooks = () => {
 
                                     </tbody>
                                 </table>
+                                <Link className="inline-block text-center px-7 py-3 bg-transparent text-blue-600 font-medium text-sm leading-snug uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" to={`/add-book`} role="button">Add More Book</Link>
                             </div>
                         </div>
                     </div>
