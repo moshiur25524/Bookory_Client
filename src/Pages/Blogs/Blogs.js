@@ -86,7 +86,7 @@ const Blogs = () => {
                     </div>
                 </div>
                 </div>
-            <section class="mt-4 text-center">Build with ❤️ by </section>
+            <section class="mt-4 text-center">Build with ❤️ by Moshiur Rahman</section>
             </div>
             
            
