@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import deleteButton from '../../Resources/icons8-remove-64.png'
+import { toast, ToastContainer } from 'react-toastify';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -37,6 +38,9 @@ const Orders = () => {
 
     const handleDeleteOrder = id => {
 
+        const proceed = window.confirm('Are You Sure to Delete ?')
+
+        if(proceed){
         const url =  `http://localhost:8080/order/${id}`
         fetch(url, {
             method: 'DELETE'
@@ -46,17 +50,21 @@ const Orders = () => {
             if(data.deletedCount > 0){
                 const remaining = orders.filter(order => order._id !== id)
                 setOrders(remaining)
+                toast.error('Order Deleted')
             }
             console.log(data);
         })
         console.log('deleted', id);
+        }
+
     }
     return (
         <div className="container p-2 mx-auto sm:p-4 dark:dark:text-gray-100">
-            <h2 className="mb-4 text-center text-2xl font-semibold leading-tight">All the orders of books: {orders.length}</h2>
+             <ToastContainer></ToastContainer>
+            <h2 className="mb-4 text-center text-2xl font-semibold leading-tight">Ordered books: {orders.length === 0 ? <p className='text-3xl font-bold mb-6 text-red-700'>Yet you do not Order. Order Please !!!</p>: orders.length}</h2>
             <div className="overflow-x-auto">
                 <table className="w-full p-6 text-xs text-left whitespace-nowrap">
-                    <thead>
+                  {orders.length === 0 ? '':  <thead>
                         <tr className="text-xl dark:dark:bg-gray-700">
                             <th className="p-3">Buyer</th>
                             <th className="p-3">Book Name</th>
@@ -67,7 +75,7 @@ const Orders = () => {
                                 <span className="sr-only">Edit</span>
                             </th>
                         </tr>
-                    </thead>
+                    </thead> }
                     {
                         orders.map(order => <tbody key={order._id} className="border-b dark:dark:bg-gray-900 dark:dark:border-gray-700">
                             <tr>
