@@ -1,6 +1,6 @@
 # Bookory (MERN Project)
 
-Live site of [Bookory](https://github.com/facebook/create-react-app).
+Live site of [Bookory](https://bookory-cc089.web.app/).
 
 ## Main Features of Bookory
 
