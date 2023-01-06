@@ -65,8 +65,8 @@ const OrderBook = () => {
                                 <input
                                     type="text"
                                     name='name'
+                                    value={user.displayName}
                                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                    placeholder="Enter Name"
                                 />
                             </div>
                         </div>
@@ -79,7 +79,6 @@ const OrderBook = () => {
                                     name='email'
                                     value={user.email}
                                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                    placeholder="Enter email"
                                     disabled
                                 />
                             </div>
