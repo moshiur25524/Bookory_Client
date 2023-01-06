@@ -10,7 +10,7 @@ const UpdateBook = () => {
     const [book, setBook] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:8080/book/${id}`
+        const url = `https://bookory-server.onrender.com/book/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -21,7 +21,7 @@ const UpdateBook = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data,e) => {
-        const url = `http://localhost:8080/book/${id}`
+        const url = `https://bookory-server.onrender.com/book/${id}`
         fetch(url,{
             method:'PUT',
             headers:{

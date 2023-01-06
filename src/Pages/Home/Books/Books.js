@@ -7,7 +7,7 @@ const Books = () => {
     // const [books, setBooks] = useState([])
 
     // useEffect(()=>{
-    //     fetch('http://localhost:8080/books')
+    //     fetch('https://bookory-server.onrender.com/books')
     //     .then(res => res.json())
     //     .then(data => setBooks(data))
     // },[])

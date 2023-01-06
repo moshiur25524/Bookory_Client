@@ -15,7 +15,7 @@ const Orders = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user?.email;
-            const url = `http://localhost:8080/order?email=${email}`
+            const url = `https://bookory-server.onrender.com/order?email=${email}`
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -41,7 +41,7 @@ const Orders = () => {
         const proceed = window.confirm('Are You Sure to Delete ?')
 
         if(proceed){
-        const url =  `http://localhost:8080/order/${id}`
+        const url =  `https://bookory-server.onrender.com/order/${id}`
         fetch(url, {
             method: 'DELETE'
         })

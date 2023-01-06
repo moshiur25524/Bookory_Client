@@ -28,7 +28,7 @@ const Login = () => {
         // console.log(user);
 
        await signInWithEmailAndPassword(email, password)
-       const {data} = await  axios.post('http://localhost:8080/login', {email})
+       const {data} = await  axios.post('https://bookory-server.onrender.com/login', {email})
        localStorage.setItem('accessToken', data)
        navigate(from, { replace: true });
        console.log(data);

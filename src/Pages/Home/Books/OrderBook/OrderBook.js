@@ -12,7 +12,7 @@ const OrderBook = () => {
     const [user] = useAuthState(auth)
 
     useEffect(() => {
-        const url = `http://localhost:8080/book/${id}`
+        const url = `https://bookory-server.onrender.com/book/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -31,7 +31,7 @@ const OrderBook = () => {
             phone: e.target.phone.value
         }
         // console.log(order);
-        axios.post('http://localhost:8080/order', order)
+        axios.post('https://bookory-server.onrender.com/order', order)
             .then(function (response) {
                 // console.log(response);
                 const { data } = response;

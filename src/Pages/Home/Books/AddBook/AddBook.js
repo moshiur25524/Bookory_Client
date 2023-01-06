@@ -14,7 +14,7 @@ const AddBook = () => {
         const book = { book_name, image, supplier_name, price, quantity, short_description }
         console.log(book);
 
-        fetch('http://localhost:8080/book', {
+        fetch('https://bookory-server.onrender.com/book', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

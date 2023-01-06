@@ -13,7 +13,7 @@ const ManageBooks = () => {
 
         const proceed = window.confirm('Are You sure to Delete ?')
         if (proceed) {
-            const url = `http://localhost:8080/book/${id}`
+            const url = `https://bookory-server.onrender.com/book/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
