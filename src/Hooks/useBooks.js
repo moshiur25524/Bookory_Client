@@ -1,22 +1,26 @@
 import { useEffect, useState } from "react";
+import Loader from "../Shared/Loader/Loader";
 
 const useBooks = () => {
-    const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetch('https://bookory-server.onrender.com/books')
-            .then(res => res.json())
-            .then(data => {
-                if(!data){
-                    return <p>Loading...</p>
-                }
-                else{
-                    setBooks(data)
-                }
-            })
-    }, [])
+  useEffect(() => {
+    fetch("https://bookory-server.onrender.com/books")
+      .then((res) => res.json())
+      .then((data) => {
+        // if (!data) {
+        //   return <Loader />;
+        // } else {
+        //   setBooks(data);
+        // }
+        setLoading(true);
+        setBooks(data);
+        setLoading(false);
+      });
+  }, []);
 
-    return [books, setBooks]
-}
+  return [books, setBooks, loading];
+};
 
 export default useBooks;
