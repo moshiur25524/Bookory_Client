@@ -16,7 +16,7 @@ const Home = () => {
       {/* <Books></Books> */}
       <div className="container my-24 px-6 mx-auto">
         <h1 className="text-center text-3xl font-bold mb-6 text-gray-800">
-          All the boooks
+          All the books
         </h1>
         {loading ? (
           <Loader />
