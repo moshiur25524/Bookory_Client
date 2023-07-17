@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loader from "../../../Shared/Loader/Loader";
@@ -11,6 +12,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [visible, setVisible] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -87,21 +89,24 @@ const Login = () => {
                     type="email"
                     name="email"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput2"
+                    id="emailInput"
                     placeholder="Email address"
                     required
                   />
                 </div>
 
-                <div className="mb-6">
+                <div className="flex justify-between items-center mb-6">
                   <input
-                    type="password"
+                    type={visible ? "text" : "password"}
                     name="password"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput2"
+                    id="passwordInput"
                     placeholder="Password"
                     required
                   />
+                  <div onClick={() => setVisible(!visible)}>
+                    {visible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  </div>
                 </div>
 
                 <div className="flex justify-between items-center mb-6">

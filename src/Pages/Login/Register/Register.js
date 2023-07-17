@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import auth from "../../../firebase.init";
 import Loader from "../../../Shared/Loader/Loader";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -8,6 +9,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [visible, setVisible] = useState(true);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -78,15 +80,18 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="mb-6">
+                <div className="flex justify-between items-center mb-6">
                   <input
-                    type="password"
+                    type={visible ? "text" : "password"}
                     name="password"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="exampleFormControlInput2"
                     placeholder="Password"
                     required
                   />
+                  <div onClick={() => setVisible(!visible)}>
+                    {visible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  </div>
                 </div>
 
                 <div className="flex justify-between items-center mb-6">

@@ -1,372 +1,173 @@
 import React from "react";
+import Rating from "react-rating";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 3,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 600,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //       initialSlide: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
+  };
+  const persons = [
+    {
+      id: 1,
+      name: "John Doe",
+      rating: 4,
+      profession: "Web Developer",
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg",
+      description:
+        "John Doe is a skilled web developer with expertise in HTML, CSS, and JavaScript. He has extensive experience in building responsive and user-friendly websites. John is passionate about creating efficient and maintainable code to deliver exceptional web experiences.",
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      rating: 5,
+      profession: "UI/UX Designer",
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg",
+      description:
+        "Jane Smith is a talented UI/UX designer specializing in creating intuitive and visually appealing user interfaces. She has a keen eye for detail and a deep understanding of user-centered design principles. Jane collaborates closely with development teams to ensure seamless integration of design and functionality.",
+    },
+    {
+      id: 3,
+      name: "Mike Johnson",
+      rating: 4,
+      profession: "Frontend Developer",
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg",
+      description:
+        "Mike Johnson is a frontend developer skilled in modern JavaScript frameworks such as React and Vue.js. He excels in crafting interactive and dynamic user interfaces. With a passion for optimizing performance and accessibility, Mike strives to deliver top-notch frontend experiences.",
+    },
+    {
+      id: 4,
+      name: "Emily Wilson",
+      rating: 3,
+      profession: "Backend Developer",
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(7).jpg",
+      description:
+        "Emily Wilson is an experienced backend developer proficient in server-side technologies such as Node.js and Python. She specializes in designing and implementing efficient APIs and database structures. Emily ensures robust and scalable backend systems to support web applications with high reliability.",
+    },
+    {
+      id: 5,
+      name: "David Brown",
+      rating: 5,
+      profession: "Full Stack Developer",
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg",
+      description:
+        "David Brown is a versatile full stack developer with expertise in both frontend and backend technologies. He is proficient in building end-to-end web applications using a wide range of tools and frameworks. David enjoys the challenge of solving complex problems and delivering comprehensive web solutions.",
+    },
+    {
+      id: 6,
+      name: "Sarah Adams",
+      profession: "Frontend Developer",
+      rating: 4,
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(5).jpg",
+      description:
+        "Sarah Adams is a frontend developer specializing in creating interactive and responsive web interfaces. She has a strong command of HTML, CSS, and JavaScript frameworks like Angular and React. With a keen eye for design and a focus on user experience, Sarah brings creativity and technical expertise to every project.",
+    },
+    {
+      id: 7,
+      name: "Michael Roberts",
+      profession: "Full Stack Developer",
+      rating: 3,
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg",
+      description:
+        "Michael Roberts is a skilled full stack developer with expertise in both frontend and backend technologies. He is proficient in languages like JavaScript, Python, and PHP, as well as frameworks like React, Express, and Django. Michael enjoys tackling complex problems and delivering robust and scalable web applications.",
+    },
+    {
+      id: 8,
+      name: "Alexis Campbell",
+      profession: "UI/UX Designer",
+      rating: 5,
+      img: "https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg",
+      description:
+        "Alexis Campbell is a passionate UI/UX designer who excels at creating visually stunning and user-friendly interfaces. She is well-versed in design tools like Sketch and Figma, and her expertise extends to prototyping and user research. Alexis collaborates closely with development teams to ensure seamless integration of design and functionality.",
+    },
+  ];
+
   return (
     <section className="container my-24 px-6 mx-auto text-gray-700">
       <div className="text-center md:max-w-xl lg:max-w-3xl mx-auto">
         <h3 className="text-3xl font-bold mb-6 text-gray-800">Testimonials</h3>
-        <p className="mb-6 pb-2 md:mb-12 md:pb-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-          amet numquam iure provident voluptate esse quasi, veritatis totam
-          voluptas nostrum quisquam eum porro a pariatur veniam.
+        <p className="mb-6 pb-2 text-gray-600 md:mb-12 md:pb-0">
+          Insights and Inspiring Stories Shared by Seasoned Professionals and
+          Passionate Enthusiasts in the World of Web Technology
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 lg:gap-12 text-center">
-        <div className="mb-12 md:mb-0">
-          <div className="flex justify-center mb-6">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
-              className="rounded-full shadow-lg w-32"
-              alt="avatar"
-            />
+      <Slider {...settings}>
+        {persons.map((person) => (
+          <div className="mb-12 p-2 md:mb-0">
+            <div className="flex justify-center mb-6">
+              <img
+                src={person.img}
+                className="rounded-full shadow-lg w-16 md:w-32 lg:w-48"
+                alt="avatar"
+              />
+            </div>
+            <h5 className="text-xl font-semibold mb-4">{person.name}</h5>
+            <h6 className="font-semibold text-blue-600 mb-4">
+              {person.profession}
+            </h6>
+            <p className="mb-4">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="quote-left"
+                className="w-6 pr-2 inline-block"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                ></path>
+              </svg>
+              {person.description}
+            </p>
+            <p className="text-center">
+              <Rating
+                initialRating={person.rating}
+                emptySymbol={<AiOutlineStar />}
+                fullSymbol={<AiFillStar />}
+                fractions={2}
+                readonly
+              />
+            </p>
           </div>
-          <h5 className="text-xl font-semibold mb-4">Maria Smantha</h5>
-          <h6 className="font-semibold text-blue-600 mb-4">Web Developer</h6>
-          <p className="mb-4">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="quote-left"
-              className="w-6 pr-2 inline-block"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <path
-                fill="currentColor"
-                d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-              ></path>
-            </svg>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos
-            id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-          </p>
-          <ul className="flex justify-center mb-0">
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star-half-alt"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 536 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z"
-                ></path>
-              </svg>
-            </li>
-          </ul>
-        </div>
-        <div className="mb-12 md:mb-0">
-          <div className="flex justify-center mb-6">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg"
-              className="rounded-full shadow-lg w-32"
-              alt="avatar"
-            />
-          </div>
-          <h5 className="text-xl font-semibold mb-4">Lisa Cudrow</h5>
-          <h6 className="font-semibold text-blue-600 mb-4">Graphic Designer</h6>
-          <p className="mb-4">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="quote-left"
-              className="w-6 pr-2 inline-block"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <path
-                fill="currentColor"
-                d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-              ></path>
-            </svg>
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut aliquid commodi.
-          </p>
-          <ul className="flex justify-center mb-0">
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-          </ul>
-        </div>
-        <div className="mb-0">
-          <div className="flex justify-center mb-6">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
-              className="rounded-full shadow-lg w-32"
-              alt="avatar"
-            />
-          </div>
-          <h5 className="text-xl font-semibold mb-4">John Smith</h5>
-          <h6 className="font-semibold text-blue-600 mb-4">
-            Marketing Specialist
-          </h6>
-          <p className="mb-4">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="quote-left"
-              className="w-6 pr-2 inline-block"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-            >
-              <path
-                fill="currentColor"
-                d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-              ></path>
-            </svg>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti.
-          </p>
-          <ul className="flex justify-center mb-0">
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                ></path>
-              </svg>
-            </li>
-            <li>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="far"
-                data-icon="star"
-                className="w-4 text-yellow-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
-                ></path>
-              </svg>
-            </li>
-          </ul>
-        </div>
-      </div>
+        ))}
+      </Slider>
     </section>
   );
 };

@@ -60,7 +60,7 @@ const Blogs = () => {
                     className="w-full flex justify-between items-center p-4 focus:outline-none"
                     onClick={() => handleClick(index)}
                   >
-                    <h2 className="font-bold text-lg">{blog.title}</h2>
+                    <h2 className=" font-semibold text-lg">{blog.title}</h2>
                     <svg
                       className={`h-5 w-5 transition-transform ${
                         index === activeIndex ? "transform rotate-180" : ""
