@@ -1,6 +1,7 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
+import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { MdOutlineLogin } from "react-icons/md";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -8,8 +9,14 @@ import auth from "../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [menuitem, setMenuitem] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   const navigate = useNavigate();
   const logOut = () => {
     signOut(auth);
@@ -72,9 +79,27 @@ const Header = () => {
               <CustomLink to="/contact">Contact</CustomLink>
               {user ? (
                 <>
-                  <CustomLink to="/add-book">Add Book</CustomLink>
-                  <CustomLink to="/manage-book">Manage Books</CustomLink>
-                  <CustomLink to="/orders">Book Orders</CustomLink>
+                  <button
+                    className="relative rounded-lg px-3 py-2 font-medium hover:bg-slate-100 text-slate-900"
+                    onClick={toggleDropdown}
+                  >
+                    Book Info
+                    {isDropdownOpen ? (
+                      <IoIosArrowForward />
+                    ) : (
+                      <IoIosArrowDown />
+                    )}
+                    <ul
+                      className={`${
+                        isDropdownOpen ? "block" : "hidden"
+                      } bg-white absolute top-10 rounded flex flex-col my-5 items-center w-full`}
+                    >
+                      <CustomLink to="/orders"> Orders</CustomLink>
+                      <CustomLink to="/add-book">Add </CustomLink>
+                      <CustomLink to="/manage-book">Manage </CustomLink>
+                    </ul>
+                  </button>
+
                   {/* <div className="flex justify-center mb-6">
             <img
               src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
