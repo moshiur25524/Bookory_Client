@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Loader from "../Shared/Loader/Loader";
 
 const useBooks = () => {
   const [books, setBooks] = useState([]);

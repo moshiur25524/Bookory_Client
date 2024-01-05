@@ -23,7 +23,7 @@ const Header = () => {
     navigate("/");
   };
   return (
-    <nav className="flex sm:justify-center space-x-4 space-y-3 ">
+    <nav className="flex sm:justify-center sticky top-0 z-50 bg-black text-white space-x-4 space-y-3 ">
       <div>
         <div className="md:block">
           <div className="md:hidden">
@@ -92,7 +92,7 @@ const Header = () => {
                     <ul
                       className={`${
                         isDropdownOpen ? "block" : "hidden"
-                      } bg-white absolute top-10 rounded flex flex-col my-5 items-center w-full`}
+                      } bg-white absolute top-10 rounded flex flex-col my-5 items-center w-full z-40`}
                     >
                       <CustomLink to="/orders"> Orders</CustomLink>
                       <CustomLink to="/add-book">Add </CustomLink>
